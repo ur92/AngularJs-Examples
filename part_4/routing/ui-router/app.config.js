@@ -8,8 +8,8 @@ angular.module('demo')
     })
     .run(function($state, $rootScope, $interval){
 
-        //$state.go('friends');
-        $state.go('friends.list');
+        $state.go('friends');
+        //$state.go('friends.list');
 
 
 
@@ -30,7 +30,7 @@ angular.module('demo')
 
 
 
-        
+
         /*var loadingInt;
         $rootScope.loadingMessage= "Loading";
 

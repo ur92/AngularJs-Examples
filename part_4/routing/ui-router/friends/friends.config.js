@@ -5,7 +5,7 @@
 angular.module('app.friends')
     .config(function ($stateProvider, $urlRouterProvider) {
         // Config 1 - Hierarchy states
-        /*$stateProvider
+        $stateProvider
             .state('friends',{
                 url: '/friends',
                 controller:'FriendsController',
@@ -29,7 +29,7 @@ angular.module('app.friends')
                 controller:'FriendsController',
                 controllerAs: 'friendsCtrl',
                 templateUrl:'friends/delete.html'
-            });*/
+            });
 
 
 
@@ -95,7 +95,7 @@ angular.module('app.friends')
 
 
         // Config 4 - With resolve
-        $stateProvider
+        /*$stateProvider
             .state('friends',{
                 url: '/friends',
                 abstract: true,
@@ -136,7 +136,7 @@ angular.module('app.friends')
                 templateUrl:'friends/delete.html',
                 controller:'FriendsController',
                 controllerAs: 'friendsCtrl'
-            });
+            });*/
 
 
         //$urlRouterProvider.otherwise('/friends/list');
