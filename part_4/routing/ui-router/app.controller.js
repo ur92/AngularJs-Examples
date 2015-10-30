@@ -3,16 +3,8 @@
  */
 
 angular.module('demo')
-    .controller('MainController', function($location, $rootScope, $state){
+    .controller('MainController', function($location, $rootScope, $scope){
         var vm= this;
-
-        $rootScope.$on('$routeChangeStart', function(){
-            vm.resolving= true;
-        });
-
-        $rootScope.$on('$routeChangeSuccess', function(){
-            vm.resolving= false;
-        });
     });
 
 

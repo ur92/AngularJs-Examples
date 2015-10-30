@@ -9,8 +9,7 @@
 <div class="container">
     <div class="row" ng-controller="MainController as mainCtrl">
         <div class="col-lg-6 col-lg-offset-3">
-            <h3 ng-show="mainCtrl.resolving">Loading...</h3>
-{{mainCtrl.resolving}}
+            <h3 ng-show="resolving">{{loadingMessage}}</h3>
             <div ui-view></div>
         </div>
     </div>

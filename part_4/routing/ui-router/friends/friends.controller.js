@@ -5,7 +5,7 @@
 angular.module('app.friends')
     .controller('FriendsController', friendsController);
 
-function friendsController($stateParams, $state, $filter, $rootScope) {
+function friendsController($stateParams, $state, $filter) {
     var vm= this;
 
     vm.$state= $state;
