@@ -1,0 +1,63 @@
+<div ng-controller="MyCartCtrl as myCart">
+
+    <div class="row">
+        <div class="col-lg-6 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title text-center">Available Products</h1>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="item in myCart.shoppingCart.products">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h4 class="list-group-item-heading">{{item.title}}</h4>
+
+                                <p class="list-group-item-text">Price: {{item.price}} ₪</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="btn btn-success pull-right"
+                                        ng-click="myCart.shoppingCart.addToCart(item)">Add
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xs-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h1 class="panel-title text-center">My Cart</h1>
+                </div>
+                <div class="panel-body">
+                    <h4>My Cart Total: {{myCart.shoppingCart.getTotal()}} ₪</h4>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="item in myCart.shoppingCart.cart">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h4 class="list-group-item-heading">{{item.title}}</h4>
+
+                                <p class="list-group-item-text">Amount: {{item.amount}}</p></div>
+                            <div class="col-lg-4">
+                                <div class="btn-group pull-right" role="group">
+                                <button class="btn btn-sm btn-success"
+                                        ng-click="myCart.shoppingCart.addToCart(item)">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                                <button class="btn btn-sm btn-danger"
+                                        ng-click="myCart.shoppingCart.removeFromCart(item)">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+

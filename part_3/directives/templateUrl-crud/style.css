@@ -1,0 +1,7 @@
+.friend-box.ng-leave {
+    transition:0.5s linear all;
+    opacity:1;
+}
+.friend-box.ng-leave.ng-leave-active {
+    opacity:0;
+}

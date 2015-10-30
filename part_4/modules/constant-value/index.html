@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body class="container" ng-controller="MainController as main">
+
+<h1>
+    {{main.appConstants.APP_NAME}}
+    <small>{{main.appConstants.VERSION}}</small>
+</h1>
+
+<div ng-include="'first/first.html'"></div>
+<div ng-include="'second/second.html'"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="./app.module.js"></script>
+<script src="./app.config.js"></script>
+<script src="./main.controller.js"></script>
+<script src="./first/first.module.js"></script>
+<script src="./first/first.controller.js"></script>
+<script src="./second/second.module.js"></script>
+<script src="./second/second.controller.js"></script>
+</body>
+</html>

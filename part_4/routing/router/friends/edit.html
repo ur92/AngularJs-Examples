@@ -1,0 +1,15 @@
+<form class="form-horizontal well ">
+    <div class="form-group" ng-repeat="(key,value) in friendsCtrl.currentItem">
+        <label class="control-label col-lg-4">{{key}}: </label>
+
+        <div class="col-lg-6">
+            <div ng-switch="getType(value)">
+                <input class="form-control" type="text" ng-switch-default ng-model="friendsCtrl.currentItem[key]">
+                <input class="form-control" type="number" ng-switch-when="number" ng-model="friendsCtrl.currentItem[key]">
+                <input class="form-control" type="checkbox" ng-switch-when="boolean" ng-model="friendsCtrl.currentItem[key]">
+            </div>
+        </div>
+    </div>
+
+    <a class="btn btn-primary" ng-href="/router/index.html#/friends">OK</a>
+</form>

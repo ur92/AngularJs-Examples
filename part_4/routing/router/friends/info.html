@@ -1,0 +1,13 @@
+<form class="form-horizontal well ">
+
+    <div class="form-group" ng-repeat="(key,value) in friendsCtrl.currentItem">
+        <label class="control-label col-lg-4">{{key}}: </label>
+        <div class="col-lg-6">
+            {{value}}
+        </div>
+    </div>
+
+    <a class="btn btn-primary" ng-href="/router/index.html#/friends/edit/{{friendsCtrl.currentItem.id}}">Edit</a>
+    <a class="btn btn-danger" ng-href="/router/index.html#/friends/delete/{{friendsCtrl.currentItem.id}}">Delete</a>
+    <a class="btn btn-default" ng-href="/router/index.html#/friends">Back</a>
+</form>

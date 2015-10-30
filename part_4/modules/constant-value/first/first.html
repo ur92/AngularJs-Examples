@@ -1,0 +1,14 @@
+
+<div ng-controller="FirstController as firstCtrl">
+    <h3>
+        {{firstCtrl.controllerName}}
+    </h3>
+
+    <div ng-mouseenter="firstCtrl.increaseViews()">
+        <h3>Number of Views: {{firstCtrl.appValues.views}}</h3>
+        <button class="btn btn-primary btn-sm" ng-click="firstCtrl.increaseLikes()">
+             <span class="glyphicon glyphicon-thumbs-up"></span> Like
+        </button>
+        {{firstCtrl.appValues.likes}} people like this
+    </div>
+</div>

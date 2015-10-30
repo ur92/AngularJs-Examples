@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../../assets/angular.min.js"></script>
+    <script src="../../assets/angular-animate.js"></script>
+    <script src="./src.js"></script>
+    <script src="./directives/my-item.js"></script>
+</head>
+<body ng-controller="MainController" class="container">
+
+<!--Example 1-->
+<div ng-repeat="friend in friends" class="friend-box">
+    <div class="row">
+        <div class="col-lg-12">
+            <myItem item="friend" delete-fn="deleteFn"></myItem>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

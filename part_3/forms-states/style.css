@@ -1,0 +1,8 @@
+.with-css input.ng-invalid.ng-touched {
+    background-color: #ffd1b9;
+}
+
+.with-css input.ng-valid.ng-touched {
+    background-color: rgba(162, 234, 178, 1);
+}
+

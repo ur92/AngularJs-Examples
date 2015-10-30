@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="../../assets/angular.min.js"></script>
+    <script src="../Directive2/src.js"></script>
+</head>
+<body>
+<!--<body ng-controller="MainController">-->
+
+<button ng-init="showDiv=false" ng-click="showDiv=!showDiv">Show Element</button>
+<br/>
+
+<div ng-show="showDiv">
+    <h1>Hi, I'm your DIV!</h1>
+</div>
+
+</body>
+</html>

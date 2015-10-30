@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="../assets/angular.min.js"></script>
+    <script src="./src.js"></script>
+</head>
+<body ng-controller="MainController" class="container">
+
+
+
+<!--Example 3-->
+<form name="myForm" novalidate>
+    Name: <input type="text" name="name" ng-model="user.name" mr-prefix required/><br/>
+    <div ng-show="myForm.name.$touched || myForm.name.$dirty" class="bg-warning">
+        <span ng-show="myForm.name.$error.mrPrefix">Must start with Mr/Ms/Mss<br/></span>
+        <span ng-show="myForm.name.$error.required">יש להכניס קלט</span>
+    </div><br/>
+</form>
+
+
+</body>
+</html>

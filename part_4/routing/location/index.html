@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body class="container">
+
+<div ng-controller="MainController">
+    <div>
+        $location.protocol() = <span ng-bind="$location.protocol()"></span> <br>
+        $location.host() = <span ng-bind="$location.host()"></span> <br>
+        $location.port() = <span ng-bind="$location.port()"></span> <br>
+        $location.path() = <span ng-bind="$location.path()"></span> <br>
+        $location.search() = <span >{{$location.search() | json}}</span> <br>
+        $location.hash() = <span ng-bind="$location.hash()"></span> <br>
+    </div>
+    <div id="navigation">
+        <a href="/שיעור%206/examples_4/routing/location/index.html#/base/first?a=b">/base/first?a=b</a> |
+        <a href="/שיעור%206/examples_4/routing/location/index.html#/base/sec/ond?flag#hash">sec/ond?flag#hash</a> |
+        <a href="/שיעור%206/examples_4/routing/location/index.html#/other-base/another?search">external</a>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="./app.js"></script>
+<script src="./app.config.js"></script>
+
+</body>
+</html>

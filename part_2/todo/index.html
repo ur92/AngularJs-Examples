@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="todoApp">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="../assets/angular.min.js"></script>
+    <script src="src.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Todo</h2>
+
+    <div ng-controller="TodoListController as todoList">
+        <div class="row">
+            <div class="col-lg-10">
+                <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+                [ <a href="" ng-click="todoList.archive()">archive</a> ]
+                <ul class="unstyled">
+                    <li ng-repeat="todo in todoList.todos">
+                        <input type="checkbox" ng-model="todo.done">
+                        <span class="done-{{todo.done}}">{{todo.text}}</span>
+                    </li>
+                </ul>
+                <form ng-submit="todoList.addTodo()" class="form-harizontal">
+                    <div class="col-lg-3">
+                        <input type="text" ng-model="todoList.todoText" size="30"
+                               placeholder="add new todo here" class="form-control">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="add">
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="../../assets/angular.min.js"></script>
+    <script src="./src.js"></script>
+</head>
+<body>
+
+<div ng-controller="MainController">
+    <p>OUTER SCOPE:</p>
+
+    <p>{{ foo }}</p>
+
+    <p>{{ bar.innerProperty }}</p>
+
+    <div ng-if="foo"> <!— ng-if creates a new scope —>
+        <p>INNER SCOPE</p>
+
+        <p>{{ foo }}</p>
+
+        <p>{{ bar.innerProperty }}</p>
+        <button ng-click="foo = foo+1"> Set primitive</button>
+        <button ng-click="bar.innerProperty = bar.innerProperty+1">Mutate object</button>
+    </div>
+</div>
+
+</body>
+</html>

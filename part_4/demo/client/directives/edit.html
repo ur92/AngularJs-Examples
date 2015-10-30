@@ -1,0 +1,18 @@
+<form class="form-horizontal well col-lg-6">
+
+    <div class="form-group" ng-repeat="(key,value) in item">
+        <label class="control-label col-lg-4">{{key}}: </label>
+
+        <div class="col-lg-6">
+            <div ng-switch="getType(value)">
+                <input type="text" ng-switch-default ng-model="item[key]">
+                <input type="number" ng-switch-when="number" ng-model="item[key]">
+                <input type="checkbox" ng-switch-when="boolean" ng-model="item[key]">
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" ng-click="update()">OK</button>
+    <button class="btn" ng-click="cancel()">Cancel</button>
+
+</form>

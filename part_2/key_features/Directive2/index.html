@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" src="./style.css">
+    <script src="../../assets/angular.min.js"></script>
+    <script src="./src.js"></script>
+</head>
+<body ng-controller="MainController" class="container">
+
+<!-- Example 1-->
+<!--<ul>
+    <li ng-repeat="friend in friends" >{{friend.name}} is a {{friend.gender}} at age {{friend.age}}</li>
+</ul>-->
+
+
+
+<!-- Example 2-->
+<!--<ul class="list-unstyled">
+    <li ng-repeat="friend in friends" >
+        <input type="checkbox" ng-model="friend.checked"> {{friend.name}} is a {{friend.gender}} at age {{friend.age}}
+    </li>
+</ul>
+
+<h3>Checked friends: {{(friends | filter: checked).length}}</h3>
+<ol>
+    <li ng-repeat="friend in friends | filter: checked= true">{{friend.name}}</li>
+</ol>-->
+
+
+
+<!-- Example 3-->
+<!--<ul class="list-unstyled">
+    <li ng-repeat="friend in friends" >
+        <button ng-click="setClass(friend, 'blue')">Blue</button>
+        <button ng-click="friend.color='red'">Red</button>
+        <span ng-style="{color: friend.color}"> {{friend.name}} is a {{friend.gender}} at age {{friend.age}}</span>
+    </li>
+</ul>-->
+
+
+
+<!-- Example 4-->
+<!--<h3><input type="checkbox" ng-model="showAll"> Show all friends</h3>
+<div ng-hide="showAll">
+    <h3>5 friends!</h3>
+    <ul class="list-unstyled" >
+        <li ng-repeat="friend in friends | limitTo: 5" >
+            {{friend.name}} is a {{friend.gender}} at age {{friend.age}}
+        </li>
+    </ul>
+</div>
+<div ng-show="showAll">
+    <h3>All friends!</h3>
+    <ul class="list-unstyled" >
+        <li ng-repeat="friend in friends" >
+            {{friend.name}} is a {{friend.gender}} at age {{friend.age}}
+        </li>
+    </ul>
+</div>-->
+
+
+
+
+<!-- Example 5-->
+<!--<h3>{{rowsToShow}} friends!</h3>
+<ul class="list-unstyled" ng-init="rowsToShow=3">
+    <li ng-repeat="friend in friends | limitTo: rowsToShow">
+        {{friend.name}} is a {{friend.gender}} at age {{friend.age}}
+    </li>
+    <li>
+        <button ng-click="getMoreRows()">Get More!</button>
+    </li>
+</ul>-->
+
+
+
+<!-- Example 6-->
+<!--<h3>Select your friend:</h3>
+<select ng-options="friend.name group by friend.gender for friend in friends" ng-model="myFriend">
+    <option value="">Select your friend</option>
+</select>
+<h3>Selected friend:</h3>
+{{myFriend}}-->
+
+
+
+
+<!-- Example 7-->
+<!--password: <input type="text" ng-model="password" ng-change="checkPassword()">
+message: {{loginMsg}}-->
+
+
+
+</body>
+</html>
