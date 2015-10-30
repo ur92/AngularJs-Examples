@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row" ng-controller="MainController as mainCtrl">
+        <div class="col-lg-6 col-lg-offset-3">
+            <h3 ng-show="mainCtrl.resolving">Loading...</h3>
+{{mainCtrl.resolving}}
+            <div ui-view></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.4.7/angular-route.min.js"></script>
+<script src="./assets/angular-ui-router.js"></script>
+<script src="./app.js"></script>
+<script src="./app.controller.js"></script>
+<script src="./app.config.js"></script>
+<script src="./friends/friends.module.js"></script>
+<script src="./friends/friends.controller.js"></script>
+<script src="./friends/friends.config.js"></script>
+
+</body>
+</html>
