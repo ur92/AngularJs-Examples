@@ -7,7 +7,24 @@ angular.module('demo')
         name: 'My Demo',
         baseUrl: 'http://localhost:3000/api/v1'
     })
-    .run(function($state){
+    .run(function ($state, $rootScope, $interval) {
+
+        var loadingInt;
+        $rootScope.loadingMessage = "Loading";
+        $rootScope.resolving= true;
+
+        $rootScope.$on('$stateChangeStart', function () {
+            $rootScope.resolving = true;
+            loadingInt = $interval(function () {
+                $rootScope.loadingMessage += '.';
+            }, 500);
+        });
+
+        $rootScope.$on('$stateChangeSuccess', function () {
+            $rootScope.resolving = false;
+
+            $interval.cancel(loadingInt);
+        });
 
         $state.go('restaurants.list');
 

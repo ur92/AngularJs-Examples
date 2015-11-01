@@ -1,8 +1,6 @@
-<h3>simpleObj: {{friendsCtrl.simpleObj.value}}</h3>
-<h3>fromDb: {{friendsCtrl.fromDb}}</h3>
-
+<h2>Restaurants</h2>
 <ul class="list-group">
-    <li class="list-group-item" ng-repeat="friend in friendsCtrl.friends">
-        <a ui-sref="friends.info({id: friend.id})">{{friend.name}}</a>
+    <li class="list-group-item" ng-repeat="rest in restCtrl.list | limitTo: 100">
+        <a ui-sref="restaurants.info({id: rest._id})">{{rest.name}}</a>
     </li>
 </ul>

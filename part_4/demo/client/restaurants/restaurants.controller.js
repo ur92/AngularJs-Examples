@@ -1,12 +1,13 @@
 angular.module('app.restaurants')
-    .controller('RestaurantsCtrl', restaurantsCtrl);
-app.config(config);
+    .controller('RestCtrl', restCtrl);
 
-function restaurantsCtrl(restaurantsData, restaurantsRsc, $stateParams, $filter) {
+function restCtrl(restData, restRsc, $stateParams, $filter, $state) {
     var vm = this;
 
     // API
-    vm.list = restaurantsData;
+    vm.list = restData;
+
+    vm.isExpandable= isExpandable;
 
     vm.add = add;
     vm.update = update;
@@ -19,13 +20,16 @@ function restaurantsCtrl(restaurantsData, restaurantsRsc, $stateParams, $filter)
 
 
     function add(item) {
-        new restaurantsRsc(item).$save(function (data) {
+        new restRsc(item).$save(function (data) {
             vm.list.push(data);
         });
     }
 
-    function update(item) {
-        item.$save();
+    function update() {
+        vm.currentItem.$save(function(){
+            $state.go('restaurants.list');
+        });
+
     }
 
     function remove(item) {
@@ -37,11 +41,15 @@ function restaurantsCtrl(restaurantsData, restaurantsRsc, $stateParams, $filter)
     function init(id){
         if(angular.isDefined(id)){
             var _id= parseInt(id);
-            var item= $filter('filter')(vm.list, {id: _id})[0];
+            var item= $filter('filter')(vm.list, {_id: _id})[0];
             if(angular.isDefined(item)){
                 vm.currentItem=item;
             }
         }
+    }
+
+    function isExpandable(value){
+        return (angular.isArray(value) || angular.isObject(value));
     }
 
 }

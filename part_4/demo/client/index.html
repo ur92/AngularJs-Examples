@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.7/angular-resource.min.js"></script>
 </head>
-<body>
+<body >
 <div class="container">
     <div class="row" ng-controller="MainController as mainCtrl">
         <div class="col-lg-6 col-lg-offset-3">
-            <h3 ng-show="resolving">{{loadingMessage}}</h3>
+            <h3 ng-show="resolving" ng-cloak>{{loadingMessage}}</h3>
             <div ui-view></div>
         </div>
     </div>
 </div>
 
 
-<script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
-<script src="https://code.angularjs.org/1.4.7/angular-resource.min.js"></script>
+
 <script src="./assets/angular-ui-router.js"></script>
 <script src="./app.js"></script>
 <script src="./app.controller.js"></script>
 <script src="./app.config.js"></script>
+<script src="./services/resources.js"></script>
 <script src="./restaurants/restaurants.module.js"></script>
 <script src="./restaurants/restaurants.controller.js"></script>
 <script src="./restaurants/restaurants.config.js"></script>

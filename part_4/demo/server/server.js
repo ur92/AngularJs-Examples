@@ -5,13 +5,13 @@ mongoose = require('mongoose'),
 restify = require('express-restify-mongoose'),
 morgan= require('morgan'),
 app = express(),
-router = express.Router(),
+router = express.Router();
 models= require('./models.js');
 
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-mongoose.connect('mongodb://localhost/database');
+mongoose.connect('mongodb://localhost/test');
 
 models.array.forEach(function(model){
     restify.serve(router, model);

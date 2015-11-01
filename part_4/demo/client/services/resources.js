@@ -1,9 +1,11 @@
 angular.module('demo')
-    .factory('restaurantsRsc', function ($resource, appConstants) {
+    .factory('restRsc', function ($resource, appConstants) {
         return $resource(
-            appConstants.baseUrl + "/books/:_id",
+            appConstants.baseUrl + "/restaurants/:_id",
             {
-                _id: '@_id'
+                _id: '@_id',
+                //limit: 500
+
             },
             {
                 'update': {

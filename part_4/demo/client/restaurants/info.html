@@ -1,13 +1,21 @@
 <form class="form-horizontal well ">
 
-    <div class="form-group" ng-repeat="(key,value) in friendsCtrl.currentItem">
+    <div class="form-group" ng-repeat="(key,value) in restCtrl.currentItem">
         <label class="control-label col-lg-4">{{key}}: </label>
-        <div class="col-lg-6">
-            {{value}}
+
+        <div class="col-lg-6" ng-show="restCtrl.isExpandable(value)">
+            <div class="form-group" ng-repeat="(innerKey, innerValue) in value track by $index">
+                <div class="col-lg-6">
+                    <p class="form-control-static"> {{innerValue}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" ng-show="!restCtrl.isExpandable(value)">
+            <p class="form-control-static"> {{value}}</p>
         </div>
     </div>
 
-    <a class="btn btn-primary" href="#/friends/edit/{{friendsCtrl.currentItem.id}}">Edit</a>
-    <a class="btn btn-danger" ui-sref="friends.delete({id: friendsCtrl.currentItem.id})">Delete</a>
-    <a class="btn btn-default" ng-click="friendsCtrl.$state.go('friends.list')">Back</a>
+    <a class="btn btn-primary" ui-sref="restaurants.edit({ id: restCtrl.currentItem._id})">Edit</a>
+    <a class="btn btn-danger" ui-sref="restaurants.delete({id: restCtrl.currentItem._id})">Delete</a>
+    <a class="btn btn-default" ui-sref="restaurants.list">Back</a>
 </form>

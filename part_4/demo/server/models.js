@@ -18,7 +18,7 @@ var gradeScm= new mongoose.Schema({
 
 exports.array = [
     mongoose.model('Restaurant', new mongoose.Schema({
-        _id: mongoose.Schema.type.ObjectId,
+        _id: mongoose.Schema.Types.ObjectId,
         address: [addressScm],
         borough: String,
         cuisine: String,

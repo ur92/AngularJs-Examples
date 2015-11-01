@@ -1,9 +1,9 @@
 <form class="form-horizontal well ">
 
-    <h3>Are you sure you want to delete {{friendsCtrl.currentItem.name}}?</h3>
+    <h3>Are you sure you want to delete {{restCtrl.currentItem.name}}?</h3>
 
-    <button class="btn btn-danger" ng-click="delete(item)">
+    <button class="btn btn-danger" ng-click="restCtrl.delete()">
         <span class="glyphicon glyphicon-remove"></span> Yes
     </button>
-    <a class="btn btn-success" ui-sref="friends.list">No</a>
+    <a class="btn btn-success" ui-sref="restaurants.list">No</a>
 </form>
