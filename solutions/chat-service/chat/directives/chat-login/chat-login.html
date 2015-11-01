@@ -1,0 +1,18 @@
+<form class="form-horizontal" name="login" novalidate>
+    <div class="form-group">
+        <label class="control-label col-lg-3 ">Login as: </label>
+
+        <div class="col-lg-4">
+            <input type="text" name="username" class="form-control" ng-model="userName"
+                   placeholder="Enter user name" required>
+        </div>
+        <div class="col-lg-4">
+            <button class="btn btn-success" ng-click="login()"
+                    ng-disabled="login.username.$invalid">Login
+            </button>
+        </div>
+    <div class="row text-center">
+
+
+    </div>
+</form>
