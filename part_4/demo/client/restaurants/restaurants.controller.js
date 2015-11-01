@@ -21,7 +21,7 @@ function restCtrl(restData, restRsc, $stateParams, $filter, $state) {
 
     function add(item) {
         new restRsc(item).$save(function (data) {
-            vm.list.push(data);
+            vm.list.push(data);;
         });
     }
 
@@ -40,8 +40,7 @@ function restCtrl(restData, restRsc, $stateParams, $filter, $state) {
 
     function init(id){
         if(angular.isDefined(id)){
-            var _id= parseInt(id);
-            var item= $filter('filter')(vm.list, {_id: _id})[0];
+            var item= $filter('filter')(vm.list, {_id: id})[0];
             if(angular.isDefined(item)){
                 vm.currentItem=item;
             }

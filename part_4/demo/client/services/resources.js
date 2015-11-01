@@ -4,7 +4,7 @@ angular.module('demo')
             appConstants.baseUrl + "/restaurants/:_id",
             {
                 _id: '@_id',
-                //limit: 500
+                //limit: 5000
 
             },
             {

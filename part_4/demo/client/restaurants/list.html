@@ -1,6 +1,19 @@
 <h2>Restaurants</h2>
+<div class="row well">
+    <div class="col-lg-12">
+        <form class="form-horizontal ">
+            <label class="control-label col-lg-6">Search by name:</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" ng-model="restCtrl.nameSearch"/>
+            </div>
+        </form>
+    </div>
+</div>
+
 <ul class="list-group">
-    <li class="list-group-item" ng-repeat="rest in restCtrl.list | limitTo: 100">
+    <li class="list-group-item" ng-repeat="rest in restCtrl.list
+                                            | limitTo: 50
+                                            | filter: {name: restCtrl.nameSearch}">
         <a ui-sref="restaurants.info({id: rest._id})">{{rest.name}}</a>
     </li>
 </ul>
