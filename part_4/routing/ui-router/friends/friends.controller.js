@@ -12,7 +12,7 @@ function friendsController($stateParams, $state, $filter) {
 
     /*vm.simpleObj= simpleObj;
     vm.fromDb= fromDb;*/
-    vm.loading= false;
+    //vm.loading= false;
 
 
     vm.currentItem={};

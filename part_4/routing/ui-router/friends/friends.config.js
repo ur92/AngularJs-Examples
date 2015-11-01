@@ -10,6 +10,12 @@ angular.module('app.friends')
                 url: '/friends',
                 controller:'FriendsController',
                 controllerAs: 'friendsCtrl',
+                template:'<ui-view/>'
+            })
+            .state('friends.list',{
+                url: '/friends',
+                controller:'FriendsController',
+                controllerAs: 'friendsCtrl',
                 templateUrl:'friends/list.html'
             })
             .state('friends.info',{

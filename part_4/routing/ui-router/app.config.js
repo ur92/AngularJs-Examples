@@ -8,8 +8,7 @@ angular.module('demo')
     })
     .run(function($state, $rootScope, $interval){
 
-        $state.go('friends');
-        //$state.go('friends.list');
+        $state.go('friends.list');
 
 
 
