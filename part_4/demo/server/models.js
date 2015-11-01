@@ -3,19 +3,33 @@
  */
 var mongoose = require('mongoose');
 
+var addressScm= new mongoose.Schema({
+    building: String,
+    coord: [Number],
+    street: String,
+    zipcode: String
+});
 
-exports.array=[
-    mongoose.model('Book', new mongoose.Schema({
-        title: String,
-        rank: {type: Number, min: 1, max: 5},
-        published_at: Date,
-        author: { type: mongoose.Schema.Types.ObjectId, ref: 'Author' }
-    })),
+var gradeScm= new mongoose.Schema({
+    date: { type: Date, default: Date.now },
+    grade: String,
+    score: Number
+});
 
-    mongoose.model('Author', new mongoose.Schema({
+exports.array = [
+    mongoose.model('Restaurant', new mongoose.Schema({
+        _id: mongoose.Schema.type.ObjectId,
+        address: [addressScm],
+        borough: String,
+        cuisine: String,
+        grades: [gradeScm],
         name: String,
-        email: String
+        restaurant_id: String
     }))
+
+
 ];
+
+
 
 

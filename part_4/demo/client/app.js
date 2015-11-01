@@ -1,11 +1,15 @@
 /**
- * Created by UR92 on 10/09/2015.
+ * Created by UR92 on 07/10/2015.
  */
-var modules = [
+
+var modules= [
+    'ui.router',
     'ngResource',
-    'ui.bootstrap',
-    'ui.router'
+    'app.restaurants'
 ];
 
-var app = angular.module('demo', modules);
+angular.module('demo', modules);
+
+
+
 
