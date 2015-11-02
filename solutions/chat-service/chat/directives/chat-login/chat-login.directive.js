@@ -3,12 +3,23 @@ angular.module('app.chat')
         return {
             templateUrl: 'chat/directives/chat-login/chat-login.html',
             scope: {
-                loginFn: '='
+                loginFn: '=',
+                usersList: '='
             },
             link: function (scope) {
-                scope.login= function(){
+                scope.userName = '';
+
+                scope.login = function () {
                     scope.loginFn(scope.userName);
-                }
+                };
+
+                scope.isUsernameInvalid = function () {
+                    if (scope.userName.trim() !== ''
+                        && scope.usersList.indexOf(scope.userName) == -1)
+                        return false;
+                    else
+                        return true;
+                };
             }
         }
 

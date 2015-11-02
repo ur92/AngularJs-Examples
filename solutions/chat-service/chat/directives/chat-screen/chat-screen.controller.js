@@ -5,8 +5,9 @@ function chatCtrl(ChatSrv) {
     var vm = this;
 
     vm.user = '';
-
+    vm.message='';
     vm.board = ChatSrv.board;
+    vm.usersList= ChatSrv.users;
 
     vm.login = function (_userName) {
         ChatSrv.userLogin(_userName);
@@ -18,6 +19,9 @@ function chatCtrl(ChatSrv) {
         vm.message = '';
     };
 
+    vm.isMessageEmpty= function(){
+        return vm.message.trim()==='';
+    };
 
 }
 

@@ -11,7 +11,7 @@
 
                 <div class="panel-body">
                     <div ng-if="!chatCtrl.user">
-                        <chat-login login-fn="chatCtrl.login"/>
+                        <chat-login login-fn="chatCtrl.login" users-list="chatCtrl.usersList"/>
                     </div>
                     <div ng-if="chatCtrl.user">
                         <chat-board user-name="chatCtrl.user" board="chatCtrl.board"/>
@@ -20,13 +20,14 @@
 
                 <div class="panel-footer" ng-if="chatCtrl.user">
                     <div class="row">
-                        <form>
+                        <form >
                             <div class="col-lg-10">
                                 <input type="text" class="form-control" ng-model="chatCtrl.message"
                                        placeholder="Send some message...">
                             </div>
                             <div class="col-lg-2">
-                                <button class="btn btn-success" ng-click="chatCtrl.sendMessage()">Send</button>
+                                <button class="btn btn-success" ng-click="chatCtrl.sendMessage()" ng-disabled="chatCtrl.isMessageEmpty()">Send</button>
+                                {{messageSend.message.$invalid}}
                             </div>
                         </form>
                     </div>
