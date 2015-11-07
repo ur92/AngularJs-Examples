@@ -3,10 +3,6 @@
  */
 
 angular.module('demo')
-    .constant('appConstants', {
-        name: 'My Demo',
-        baseUrl: 'http://localhost:3000/api/v1'
-    })
     .run(function ($state, $rootScope, $interval) {
 
         var loadingInt;
@@ -26,7 +22,8 @@ angular.module('demo')
             $interval.cancel(loadingInt);
         });
 
-        $state.go('restaurants.list');
+        $state.go('simple-http');
+        //$state.go('restaurants.list');
 
     });
 

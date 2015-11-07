@@ -21,7 +21,7 @@ function restCtrl(restData, restRsc, $stateParams, $filter, $state) {
 
     function add(item) {
         new restRsc(item).$save(function (data) {
-            vm.list.push(data);;
+            vm.list.push(data);
         });
     }
 
@@ -32,9 +32,10 @@ function restCtrl(restData, restRsc, $stateParams, $filter, $state) {
 
     }
 
-    function remove(item) {
-        item.$remove(function(){
-            vm.list.splice(vm.list.indexOf(item),1);
+    function remove() {
+        vm.currentItem.$remove(function(){
+            vm.list.splice(vm.list.indexOf(vm.currentItem),1);
+            $state.go('restaurants.list');
         });
     }
 
