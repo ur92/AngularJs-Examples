@@ -7,12 +7,7 @@ angular.module('app.restaurants')
                 template: '<ui-view/>',
                 resolve: {
                     restData: function (restRsc) {
-                        return restRsc.query(
-                            {
-                                sort: 'name',
-                                limit: 5000
-                            }
-                        ).$promise;
+                        return restRsc.query().$promise;
                     }
                 }
             })

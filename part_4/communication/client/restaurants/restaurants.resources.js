@@ -1,9 +1,11 @@
 angular.module('app.restaurants')
     .factory('restRsc', function ($resource, Configs) {
         return $resource(
-            Configs.baseUrl + "/restaurants/:_id",
+            Configs.baseUrl + "/restaurants/:id",
             {
-                _id: '@_id'
+                id: '@_id',
+                sort: 'name',
+                limit: 5000
             },
             {
                 'update': {
