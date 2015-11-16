@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body class="container">
+<br/>
+
+<div ng-controller="MainCtrl as mainCtrl">
+    <h1>{{mainCtrl.appName}}</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            <chat-screen/>
+        </div>
+        <div class="col-lg-6">
+            <chat-screen/>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="./app.js"></script>
+<script src="./app.config.js"></script>
+<script src="./app.controller.js"></script>
+<script src="./chat/chat.module.js"></script>
+<script src="./chat/services/chat.service.js"></script>
+<script src="./chat/directives/chat-screen/chat-screen.controller.js"></script>
+<script src="./chat/directives/chat-screen/chat-screen.directive.js"></script>
+<script src="./chat/directives/chat-board/chat-board.directive.js"></script>
+<script src="./chat/directives/chat-board/chat-board-name.filter.js"></script>
+<script src="./chat/directives/chat-login/chat-login.directive.js"></script>
+
+</body>
+</html>
