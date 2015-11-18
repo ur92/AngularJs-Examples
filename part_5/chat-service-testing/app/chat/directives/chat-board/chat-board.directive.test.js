@@ -1,4 +1,4 @@
-describe('chatBoard directive', function () {
+xdescribe('chatBoard directive', function () {
     var $compile,
         $rootScope;
 
@@ -30,9 +30,5 @@ describe('chatBoard directive', function () {
         var element = $compile("<chat-board user-name='sdf'/>")(scope);
         // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
         scope.$digest();
-        dump(element.isolateScope());
-        dump(element.html());
-        // Check that the compiled element contains the templated content
-        //expect(element.html()).toContain("lidless, wreathed in flame, 2 times");
     });
 });
