@@ -7,7 +7,7 @@ angular.module('app.core', [])
         }
     )
     .config(function(AuthServiceProvider, AppConstants){
-        //AuthServiceProvider.setPasswordLength(AppConstants.passwordLength);
+        AuthServiceProvider.setPasswordLength(AppConstants.passwordLength);
     });
 
 

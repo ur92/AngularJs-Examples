@@ -12,7 +12,7 @@ angular.module('app.login.directive',[])
                scope.loggedIn= false;
 
                scope.login= function(){
-                   if(scope.loginForm.password=== AuthService || scope.loginForm.email=='ur92.ed@gmail.com'){
+                   if(scope.loginForm.password=== AuthService && scope.loginForm.email=='ur92.ed@gmail.com'){
                        scope.loginForm.error=false;
                        scope.loggedIn=true;
                    }

@@ -4,6 +4,6 @@ angular.module('demoApp')
             var vm= this;
             vm.appConstants = AppConstants;
 
-            //vm.authState= AuthService.state;
+            vm.authState= AuthService.state;
         }
     );
